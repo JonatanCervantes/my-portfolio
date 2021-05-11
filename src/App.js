@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroImage from "./components/HeroImage";
 import About from "./components/About";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar></Navbar>
         {/* <HeroImage></HeroImage> */}
         {/* <About></About> */}
+        <Skills></Skills>
 
         <Switch>
           <Route path="/" exact></Route>

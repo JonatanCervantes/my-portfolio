@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },
-  gridListTile: {},
   imagen: {
     paddingInline: theme.spacing(1),
     width: "100%",
@@ -64,7 +63,7 @@ function About() {
         <Grid container xs={6} sm={4}>
           <GridList cols={3}>
             {LOGOS.map((logo) => (
-              <GridListTile className={classes.gridListTile} cols={1}>
+              <GridListTile cols={1}>
                 <img className={classes.imagen} src={logo} />
               </GridListTile>
             ))}
