@@ -13,6 +13,8 @@ import heroBackground from "../assets/videos/background-binary.gif";
 
 const useStyles = makeStyles({
   root: {
+    flexGrow: 1,
+
     //marginInline: "2px",
   },
   card: {

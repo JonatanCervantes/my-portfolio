@@ -66,14 +66,14 @@ function Skills() {
 
   return (
     <>
-      <Grid container className={classes.root} xs={12}>
-        <Grid item xs={0} sm={2}></Grid>
-        <Grid justify="center" container xs={12} sm={8}>
+      <Grid container className={classes.root}>
+        <Grid item xs={false} sm={2}></Grid>
+        <Grid item xs={12} sm={8}>
           <Typography className={classes.textContainer} variant="h2">
             Some of my skills
           </Typography>
         </Grid>
-        <Grid item xs={0} sm={2}></Grid>
+        <Grid item xs={false} sm={2}></Grid>
 
         <Grid container justify="space-evenly">
           {SKILLS_DATA.map((skill) => (

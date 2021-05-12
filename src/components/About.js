@@ -53,14 +53,14 @@ function About() {
             LEARN
           </Typography>
         </Grid>
-        <Grid xs={0} sm={2}></Grid>
+        <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={6} sm={4}>
           <Typography className={classes.frases}>
             With both team and individual work, I seek to develop software that
             has a true impact on society.
           </Typography>{" "}
         </Grid>
-        <Grid container xs={6} sm={4}>
+        <Grid item xs={6} sm={4}>
           <GridList cols={3}>
             {LOGOS.map((logo) => (
               <GridListTile cols={1}>
@@ -69,7 +69,7 @@ function About() {
             ))}
           </GridList>
         </Grid>
-        <Grid xs={0} sm={2}></Grid>
+        <Grid item xs={false} sm={2}></Grid>
       </Grid>
     </div>
   );
