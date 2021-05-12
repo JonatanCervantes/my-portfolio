@@ -35,8 +35,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginInline: theme.spacing(1),
   },
-  textContainer: {
+
+  titles: {
+    paddingBottom: theme.spacing(4),
     textAlign: "center",
+    color: theme.palette.text.secondary,
   },
 }));
 
@@ -48,14 +51,14 @@ function Projects() {
       <Grid container className={classes.root}>
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
-          <Typography className={classes.textContainer} variant="h2">
-            Projects{" "}
+          <Typography className={classes.titles} variant="h3">
+            PROJECTS{" "}
           </Typography>
         </Grid>
         <Grid item xs={false} sm={2}></Grid>
         <Grid container justify="space-evenly">
-          {PROJECTS.map((sp) => (
-            <SingleProject project={sp} />
+          {PROJECTS.map((sp, index) => (
+            <SingleProject key={`Project${index}`} project={sp} />
           ))}
         </Grid>
       </Grid>

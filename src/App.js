@@ -6,6 +6,7 @@ import HeroImage from "./components/HeroImage";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Body from "./components/Body";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <CssBaseline />
       <Router>
         <Navbar></Navbar>
-        <HeroImage></HeroImage>
+        <Body></Body>{" "}
+        {/* <HeroImage></HeroImage>
         <About></About>
         <Skills></Skills>
-        <Projects></Projects>
+        <Projects></Projects> */}
         <Switch>
           <Route path="/" exact></Route>
         </Switch>

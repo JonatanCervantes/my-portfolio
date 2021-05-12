@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
   iconContainer: {
     display: "flex",
     justifyContent: "center",
-    // objectFit: "contain",
   },
   textContainer: {
     textAlign: "center",
@@ -55,7 +54,7 @@ function SingleProject(props) {
             />
           </div>
           <CardContent className={classes.textContainer}>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h5">
               {project.title}
             </Typography>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -63,8 +62,9 @@ function SingleProject(props) {
                 onMouseEnter={() => setIsFlipped((prev) => !prev)}
                 className="CardFront"
               >
-                {project.skills.map((technology) => (
+                {project.skills.map((technology, index) => (
                   <Typography
+                    key={`Technology${index}`}
                     variant="body2"
                     color="textSecondary"
                     component="p"
