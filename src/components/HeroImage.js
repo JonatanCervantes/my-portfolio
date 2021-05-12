@@ -4,18 +4,15 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-// import heroBackground from "../assets/images/montana.jpg";
-import heroBackground from "../assets/videos/background-binary.gif";
+import backgroundGif from "../assets/videos/background-coding-2.gif";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   card: {
     position: "relative",
-    background:
-      // "linear-gradient(90deg, rgba(42,2,2,1) 33%, rgba(32,11,11,1) 66%, rgba(69,23,29,1) 100%)",
-      "linear-gradient(90deg, rgba(1,0,5,1) 26%, rgba(11,14,32,1) 71%, rgba(28,28,43,1) 100%)",
+    background: "transparent",
   },
   media: {
     opacity: "0.1",
@@ -28,9 +25,9 @@ const useStyles = makeStyles({
   },
   typography: {
     textAlign: "center",
-    color: "white",
+    color: theme.palette.text.secondary,
   },
-});
+}));
 
 function HeroImage() {
   const styles = useStyles();
@@ -42,14 +39,14 @@ function HeroImage() {
           className={styles.media}
           component="img"
           height="600"
-          src={heroBackground}
+          src={backgroundGif}
         />
         <div className={styles.overlay}>
           <Typography className={styles.typography} variant="h2">
-            JONATAN CERVANTES
+            JONATAN CERVANTES{" "}
           </Typography>
           <Typography className={styles.typography} variant="h3">
-            SOFTWARE ENGINEER
+            SOFTWARE ENGINEER{" "}
           </Typography>
         </div>
       </Card>

@@ -20,11 +20,9 @@ const useStyles = makeStyles((theme) => ({
   titles: {
     paddingBottom: theme.spacing(4),
     textAlign: "center",
-    color: theme.palette.text.secondary,
   },
   phrases: {
     padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
   },
   logoStyle: {
     paddingInline: theme.spacing(1),
@@ -40,8 +38,7 @@ function About() {
       <Grid className={classes.gridContainer} container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
-            WEB AND MOBILE FOCUSED <br></br>EAGER TO CONTRIBUTE & WILLING TO
-            LEARN
+            WEB & MOBILE FOCUSED <br></br>EAGER TO CONTRIBUTE & WILLING TO LEARN
           </Typography>
         </Grid>
         <Grid item xs={false} sm={2}></Grid>

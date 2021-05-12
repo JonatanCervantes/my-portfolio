@@ -66,7 +66,7 @@ function SingleProject(props) {
                   <Typography
                     key={`Technology${index}`}
                     variant="body2"
-                    color="textSecondary"
+                    // color="textSecondary"
                     component="p"
                   >
                     {technology}
@@ -77,7 +77,7 @@ function SingleProject(props) {
                 onMouseLeave={() => setIsFlipped((prev) => !prev)}
                 className={"CardBack"}
               >
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" component="p">
                   {project.description}
                 </Typography>
               </div>

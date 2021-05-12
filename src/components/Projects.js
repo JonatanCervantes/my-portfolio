@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
   titles: {
     paddingBottom: theme.spacing(4),
     textAlign: "center",
-    color: theme.palette.text.secondary,
   },
 }));
 

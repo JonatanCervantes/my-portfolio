@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import {
   Button,
   AppBar,
@@ -21,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  appBarStyle: {
+    background: "transparent",
+    boxShadow: "none",
+  },
 }));
 
 function Navbar() {
@@ -28,7 +31,7 @@ function Navbar() {
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar className={classes.appBarStyle} position="static" elevation={0}>
           <Toolbar>
             <Typography className={classes.title} variant="h6">
               JC

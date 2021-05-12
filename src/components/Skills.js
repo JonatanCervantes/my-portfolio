@@ -9,7 +9,8 @@ import {
 } from "@material-ui/core";
 import React from "react";
 
-import backgroundCoding from "../assets/images/background-coding.jpg";
+import backgroundGif from "../assets/videos/background-coding.gif";
+
 import { MyIcons, ICON_TYPES } from "./MyIcons";
 
 const SKILLS_DATA = [
@@ -46,7 +47,6 @@ const STROKE = "white";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginInline: theme.spacing(1),
   },
   svgIcons: {
     height: 90,
@@ -58,26 +58,26 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     textAlign: "center",
-    color: "white",
+    color: theme.palette.text.secondary,
   },
   titles: {
     textAlign: "center",
-    color: "white",
+    color: theme.palette.text.secondary,
   },
   cardStyle: {
     position: "relative",
     background:
-      // "linear-gradient(90deg, rgba(42,2,2,1) 33%, rgba(32,11,11,1) 66%, rgba(69,23,29,1) 100%)",
-      "linear-gradient(90deg, rgba(1,0,5,1) 26%, rgba(11,14,32,1) 71%, rgba(28,28,43,1) 100%)",
+      "radial-gradient(circle, rgba(23,24,24,1) 50%, rgba(28,33,36,1) 90%)",
   },
   cardBackground: {
     padding: theme.spacing(2),
     backgroundColor: "transparent",
-    border: "3px solid white",
-    opacity: "1",
+    border: "3px solid",
+    borderColor: theme.palette.text.secondary,
+    opacity: "0.9",
   },
   backgroundImagen: {
-    opacity: "0.2",
+    opacity: "0.1",
   },
   overlay: {
     position: "absolute",
@@ -92,14 +92,13 @@ function Skills() {
   const classes = useStyles();
 
   return (
-    <>
-      <Card alignItems="center" className={classes.cardStyle}>
+    <div className={classes.root}>
+      <Card className={classes.cardStyle}>
         <CardMedia
-          container
           className={classes.backgroundImagen}
           component="img"
           height="600"
-          src={backgroundCoding}
+          src={backgroundGif}
         />
         <Grid alignItems="center" className={classes.overlay} container>
           <Grid item xs={false} sm={2}></Grid>
@@ -131,7 +130,6 @@ function Skills() {
                       <Typography
                         key={`Skill${index}`}
                         variant="body2"
-                        color="white"
                         component="p"
                       >
                         {technology}
@@ -144,7 +142,7 @@ function Skills() {
           </Grid>
         </Grid>
       </Card>
-    </>
+    </div>
   );
 }
 
