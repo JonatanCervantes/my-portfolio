@@ -33,12 +33,12 @@ function HeroImage() {
   const styles = useStyles();
 
   return (
-    <div className={styles.root}>
+    <div id="heroImage" className={styles.root}>
       <Card className={styles.card}>
         <CardMedia
           className={styles.media}
           component="img"
-          height="600"
+          height="600px"
           src={backgroundGif}
         />
         <div className={styles.overlay}>

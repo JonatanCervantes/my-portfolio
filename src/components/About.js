@@ -34,7 +34,7 @@ function About() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div id="about" className={classes.root}>
       <Grid className={classes.gridContainer} container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">

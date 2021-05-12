@@ -92,12 +92,12 @@ function Skills() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div id="skills" className={classes.root}>
       <Card className={classes.cardStyle}>
         <CardMedia
           className={classes.backgroundImagen}
           component="img"
-          height="600"
+          height="600px"
           src={backgroundGif}
         />
         <Grid alignItems="center" className={classes.overlay} container>

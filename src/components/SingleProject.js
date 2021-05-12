@@ -6,6 +6,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Link,
   makeStyles,
   Typography,
 } from "@material-ui/core";
@@ -42,6 +43,7 @@ function SingleProject(props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const project = props.project;
   const classes = useStyles();
+
   return (
     <Card>
       <div className={classes.flexContainer}>
@@ -66,12 +68,11 @@ function SingleProject(props) {
                   <Typography
                     key={`Technology${index}`}
                     variant="body2"
-                    // color="textSecondary"
                     component="p"
                   >
                     {technology}
                   </Typography>
-                ))}{" "}
+                ))}
               </div>
               <div
                 onMouseLeave={() => setIsFlipped((prev) => !prev)}
@@ -85,7 +86,6 @@ function SingleProject(props) {
           </CardContent>
         </CardActionArea>
         <div className={classes.cardFooter}>
-          {" "}
           <CardActions>
             <Button size="small" color="primary">
               Description
@@ -93,9 +93,17 @@ function SingleProject(props) {
             <Button size="small" color="primary">
               Demo
             </Button>
-            <Button size="small" color="primary">
-              Source Code{" "}
-            </Button>
+            <Link
+              href={project.projectUrl}
+              color="inherit"
+              target="_blank"
+              rel="noreferrer"
+              underline="none"
+            >
+              <Button size="small" color="primary">
+                Source Code
+              </Button>
+            </Link>
           </CardActions>
         </div>
       </div>

@@ -6,8 +6,13 @@ import bsbIcon from "../assets/images/bsb-icon.svg";
 import montanaIcon from "../assets/images/montana.jpg";
 import SingleProject from "./SingleProject";
 
+const ALZAID_URL = "https://github.com/eduardoislas/AlzhaidApp";
+const BSB_URL = "https://github.com/JonatanCervantes/bsb";
+const MYPORTFOLIO_URL = "https://github.com/JonatanCervantes/my-portfolio";
+
 const PROJECTS = [
   {
+    projectUrl: ALZAID_URL,
     imageUrl: alzaidIcon,
     title: "Alzaid",
     skills: ["TypeScript", "Ionic", "Angular", "NodeJS", "Mongo"],
@@ -15,6 +20,7 @@ const PROJECTS = [
       "I developed a Mobile App for an alzheimer elderly care home, where its employees with different roles send notifications to each other, administrate their patients daily activities, humor and incidences.  Its front-end was developed with TypeScript, Angular, Ionic, HTML and CSS. Its back-end was developed using Node JS and its database with Mongo DB.",
   },
   {
+    projectUrl: BSB_URL,
     imageUrl: bsbIcon,
     title: "Barber Brothers",
     skills: ["Kotlin", "Android Studio", "Firestore", "Coroutines"],
@@ -22,6 +28,7 @@ const PROJECTS = [
       "Developed an android app using Kotlin for a local barber shop. Implemented CRUD operations to manage appointments, employees and services offered. Incorporated Firebase for: authentications, firestore, storage and push notifications.  Use of coroutines and MVVM.",
   },
   {
+    projectUrl: MYPORTFOLIO_URL,
     imageUrl: montanaIcon,
     title: "My portfolio",
     skills: ["JavaScript", "React", "Material-UI", "Firebase"],
@@ -46,8 +53,8 @@ function Projects() {
   const classes = useStyles();
 
   return (
-    <>
-      <Grid container className={classes.root}>
+    <div id="projects" className={classes.root}>
+      <Grid container>
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
           <Typography className={classes.titles} variant="h3">
@@ -61,7 +68,7 @@ function Projects() {
           ))}
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 }
 
