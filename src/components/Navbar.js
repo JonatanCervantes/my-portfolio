@@ -3,13 +3,14 @@ import {
   Button,
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
   makeStyles,
   Link,
+  Avatar,
 } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import jcLogo from "../assets/images/jc-logo.png";
 import { Link as ReactScrollLink } from "react-scroll";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/jonatan-cervantes/";
@@ -22,11 +23,14 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginInline: theme.spacing(2),
   },
+  logoStyle: {
+    flexGrow: 1,
+  },
   title: {
     flexGrow: 1,
   },
   appBarStyle: {
-    background: "transparent",
+    // background: "transparent",
     boxShadow: "none",
   },
 }));
@@ -38,46 +42,44 @@ function Navbar() {
     <div className={classes.root}>
       <AppBar className={classes.appBarStyle} position="static" elevation={0}>
         <Toolbar>
-          <Typography className={classes.title} variant="h6">
+          <div className={classes.logoStyle}>
             <ReactScrollLink
               activeClass="active"
               to="heroImage"
               spy={true}
               smooth={true}
             >
-              JC
+              <IconButton color="inherit">
+                <Avatar src={jcLogo} variant="square"></Avatar>
+              </IconButton>
             </ReactScrollLink>
-          </Typography>
-          <Button color="inherit">
-            <ReactScrollLink
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-            >
-              About
-            </ReactScrollLink>
-          </Button>
-          <Button color="inherit">
-            <ReactScrollLink
-              activeClass="active"
-              to="skills"
-              spy={true}
-              smooth={true}
-            >
-              Skills
-            </ReactScrollLink>
-          </Button>
-          <Button color="inherit">
-            <ReactScrollLink
-              activeClass="active"
-              to="projects"
-              spy={true}
-              smooth={true}
-            >
-              Projects
-            </ReactScrollLink>
-          </Button>
+          </div>
+
+          <ReactScrollLink
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+          >
+            <Button color="inherit">About</Button>
+          </ReactScrollLink>
+
+          <ReactScrollLink
+            activeClass="active"
+            to="skills"
+            spy={true}
+            smooth={true}
+          >
+            <Button color="inherit">Skills</Button>
+          </ReactScrollLink>
+          <ReactScrollLink
+            activeClass="active"
+            to="projects"
+            spy={true}
+            smooth={true}
+          >
+            <Button color="inherit">Projects </Button>
+          </ReactScrollLink>
           <Link
             href={LINKEDIN_URL}
             color="inherit"

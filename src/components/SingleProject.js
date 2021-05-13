@@ -40,9 +40,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SingleProject(props) {
+  const buttonTexts = ["Description", "Technologies"];
   const [isFlipped, setIsFlipped] = useState(false);
+  const [buttonText, setButtonText] = useState(buttonTexts[0]);
   const project = props.project;
   const classes = useStyles();
+
+  const flipCard = () => {
+    if (isFlipped) setButtonText(buttonTexts[0]);
+    else setButtonText(buttonTexts[1]);
+    setIsFlipped((prev) => !prev);
+  };
 
   return (
     <Card>
@@ -61,7 +69,7 @@ function SingleProject(props) {
             </Typography>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
               <div
-                onMouseEnter={() => setIsFlipped((prev) => !prev)}
+                // onMouseEnter={() => setIsFlipped((prev) => !prev)}
                 className="CardFront"
               >
                 {project.skills.map((technology, index) => (
@@ -75,7 +83,7 @@ function SingleProject(props) {
                 ))}
               </div>
               <div
-                onMouseLeave={() => setIsFlipped((prev) => !prev)}
+                // onMouseLeave={() => setIsFlipped((prev) => !prev)}
                 className={"CardBack"}
               >
                 <Typography variant="body2" component="p">
@@ -87,8 +95,13 @@ function SingleProject(props) {
         </CardActionArea>
         <div className={classes.cardFooter}>
           <CardActions>
-            <Button size="small" color="primary">
-              Description
+            <Button
+              // onClick={() => setIsFlipped((prev) => !prev)}
+              onClick={() => flipCard()}
+              size="small"
+              color="primary"
+            >
+              {buttonText}
             </Button>
             <Button size="small" color="primary">
               Demo

@@ -3,7 +3,7 @@ import React from "react";
 
 import alzaidIcon from "../assets/images/alzaid-icon.svg";
 import bsbIcon from "../assets/images/bsb-icon.svg";
-import montanaIcon from "../assets/images/montana.jpg";
+import jcLogo from "../assets/images/jc-logo.png";
 import SingleProject from "./SingleProject";
 
 const ALZAID_URL = "https://github.com/eduardoislas/AlzhaidApp";
@@ -29,7 +29,7 @@ const PROJECTS = [
   },
   {
     projectUrl: MYPORTFOLIO_URL,
-    imageUrl: montanaIcon,
+    imageUrl: jcLogo,
     title: "My portfolio",
     skills: ["JavaScript", "React", "Material-UI", "Firebase"],
     description:

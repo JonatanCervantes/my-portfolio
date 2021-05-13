@@ -6,7 +6,7 @@ import jsLogo from "../assets/images/js-logo.svg";
 import nodeJsLogo from "../assets/images/nodejs-logo.svg";
 import reactLogo from "../assets/images/react-logo.svg";
 
-const LOGOS = [nodeJsLogo, jsLogo, reactLogo];
+const LOGOS = [jsLogo, reactLogo, nodeJsLogo];
 
 const useStyles = makeStyles((theme) => ({
   root: {
