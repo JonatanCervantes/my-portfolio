@@ -14,8 +14,9 @@ import ReactCardFlip from "react-card-flip";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    marginInline: theme.spacing(1),
+    // flexGrow: 1,
+    marginTop: theme.spacing(1),
+    // marginInline: theme.spacing(1),
   },
   media: {
     height: 90,
@@ -53,7 +54,7 @@ function SingleProject(props) {
   };
 
   return (
-    <Card>
+    <Card className={classes.root}>
       <div className={classes.flexContainer}>
         <CardActionArea>
           <div className={classes.iconContainer}>

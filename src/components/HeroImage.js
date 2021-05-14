@@ -9,6 +9,8 @@ import backgroundGif from "../assets/videos/background-coding-2.gif";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: "100%",
+    height: "100%",
   },
   card: {
     position: "relative",

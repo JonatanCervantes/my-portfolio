@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginInline: theme.spacing(2),
+    // marginInline: theme.spacing(2),
   },
   logoStyle: {
     flexGrow: 1,
@@ -31,7 +31,12 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarStyle: {
     // background: "transparent",
+    background:
+      "radial-gradient(circle, rgba(23,24,24,1) 50%, rgba(28,33,36,1) 90%)",
     boxShadow: "none",
+  },
+  active: {
+    borderBottom: "2px solid #08C7D6",
   },
 }));
 
@@ -40,15 +45,10 @@ function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appBarStyle} position="static" elevation={0}>
+      <AppBar className={classes.appBarStyle} position="fixed" elevation={0}>
         <Toolbar>
           <div className={classes.logoStyle}>
-            <ReactScrollLink
-              activeClass="active"
-              to="heroImage"
-              spy={true}
-              smooth={true}
-            >
+            <ReactScrollLink to="heroImage" spy={true} smooth={true}>
               <IconButton color="inherit">
                 <Avatar src={jcLogo} variant="square"></Avatar>
               </IconButton>
@@ -56,16 +56,16 @@ function Navbar() {
           </div>
 
           <ReactScrollLink
-            activeClass="active"
+            activeClass={classes.active}
             to="about"
             spy={true}
             smooth={true}
           >
-            <Button color="inherit">About</Button>
+            <Button color="inherit"> About </Button>
           </ReactScrollLink>
 
           <ReactScrollLink
-            activeClass="active"
+            activeClass={classes.active}
             to="skills"
             spy={true}
             smooth={true}
@@ -73,7 +73,7 @@ function Navbar() {
             <Button color="inherit">Skills</Button>
           </ReactScrollLink>
           <ReactScrollLink
-            activeClass="active"
+            activeClass={classes.active}
             to="projects"
             spy={true}
             smooth={true}

@@ -11,6 +11,8 @@ const LOGOS = [jsLogo, reactLogo, nodeJsLogo];
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: "100%",
+    height: "100%",
   },
   gridContainer: {
     alignSelf: "center",
@@ -18,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
     justify: "center",
   },
   titles: {
-    paddingBottom: theme.spacing(4),
+    // paddingBottom: theme.spacing(4),
     textAlign: "center",
   },
   phrases: {
-    padding: theme.spacing(2),
+    // padding: theme.spacing(2),
   },
   logoStyle: {
-    paddingInline: theme.spacing(1),
+    // paddingInline: theme.spacing(1),
     width: "100%",
   },
 }));
@@ -34,7 +36,7 @@ function About() {
   const classes = useStyles();
 
   return (
-    <div id="about" className={classes.root}>
+    <Grid container id="about" className={classes.root}>
       <Grid className={classes.gridContainer} container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
@@ -59,7 +61,7 @@ function About() {
         </Grid>
         <Grid className={classes.claseBackground} item xs={false} sm={2}></Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 }
 

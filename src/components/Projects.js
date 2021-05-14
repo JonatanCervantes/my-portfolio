@@ -40,11 +40,18 @@ const PROJECTS = [
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginInline: theme.spacing(1),
+    width: "100%",
+    height: "105%",
+    // marginInline: theme.spacing(1),
+  },
+  gridContainer: {
+    alignSelf: "center",
+    alignItems: "center",
+    justify: "center",
   },
 
   titles: {
-    paddingBottom: theme.spacing(4),
+    paddingBottom: theme.spacing(3),
     textAlign: "center",
   },
 }));
@@ -53,8 +60,8 @@ function Projects() {
   const classes = useStyles();
 
   return (
-    <div id="projects" className={classes.root}>
-      <Grid container>
+    <Grid container id="projects" className={classes.root}>
+      <Grid container className={classes.gridContainer} spacing={3}>
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
           <Typography className={classes.titles} variant="h3">
@@ -68,7 +75,7 @@ function Projects() {
           ))}
         </Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 }
 

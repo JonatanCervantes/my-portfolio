@@ -63,14 +63,18 @@ const useStyles = makeStyles((theme) => ({
   titles: {
     textAlign: "center",
     color: theme.palette.text.secondary,
+    paddingBottom: theme.spacing(4),
   },
   cardStyle: {
+    width: "100%",
+    height: "100%",
     position: "relative",
     background:
       "radial-gradient(circle, rgba(23,24,24,1) 50%, rgba(28,33,36,1) 90%)",
   },
   cardBackground: {
     padding: theme.spacing(2),
+    marginTop: theme.spacing(1),
     backgroundColor: "transparent",
     border: "3px solid",
     borderColor: theme.palette.text.secondary,
@@ -92,7 +96,7 @@ function Skills() {
   const classes = useStyles();
 
   return (
-    <div id="skills" className={classes.root}>
+    <Grid container id="skills" className={classes.root}>
       <Card className={classes.cardStyle}>
         <CardMedia
           className={classes.backgroundImagen}
@@ -100,49 +104,52 @@ function Skills() {
           height="600px"
           src={backgroundGif}
         />
+
         <Grid alignItems="center" className={classes.overlay} container>
-          <Grid item xs={false} sm={2}></Grid>
-          <Grid item xs={12} sm={8}>
-            <Typography className={classes.titles} variant="h3">
-              SOME OF MY SKILLS{" "}
-            </Typography>
-          </Grid>
-          <Grid item xs={false} sm={2}></Grid>
+          <Grid container>
+            <Grid item xs={false} sm={2}></Grid>
+            <Grid item xs={12} sm={8}>
+              <Typography className={classes.titles} variant="h3">
+                SOME OF MY SKILLS{" "}
+              </Typography>
+            </Grid>
+            <Grid item xs={false} sm={2}></Grid>
 
-          <Grid container justify="space-evenly">
-            {SKILLS_DATA.map((skill, index) => (
-              <Card className={classes.cardBackground} key={`Logo${index}`}>
-                <CardActionArea>
-                  <div className={classes.iconContainer}>
-                    <MyIcons
-                      type={skill.type}
-                      fill={FILL}
-                      stroke={STROKE}
-                      style={classes.svgIcons}
-                    ></MyIcons>
-                  </div>
+            <Grid container justify="space-evenly">
+              {SKILLS_DATA.map((skill, index) => (
+                <Card className={classes.cardBackground} key={`Logo${index}`}>
+                  <CardActionArea>
+                    <div className={classes.iconContainer}>
+                      <MyIcons
+                        type={skill.type}
+                        fill={FILL}
+                        stroke={STROKE}
+                        style={classes.svgIcons}
+                      ></MyIcons>
+                    </div>
 
-                  <CardContent className={classes.textContainer}>
-                    <Typography gutterBottom variant="h5">
-                      {skill.title}
-                    </Typography>
-                    {skill.skills.map((technology, index) => (
-                      <Typography
-                        key={`Skill${index}`}
-                        variant="body2"
-                        component="p"
-                      >
-                        {technology}
+                    <CardContent className={classes.textContainer}>
+                      <Typography gutterBottom variant="h5">
+                        {skill.title}
                       </Typography>
-                    ))}
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            ))}
+                      {skill.skills.map((technology, index) => (
+                        <Typography
+                          key={`Skill${index}`}
+                          variant="body2"
+                          component="p"
+                        >
+                          {technology}
+                        </Typography>
+                      ))}
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
       </Card>
-    </div>
+    </Grid>
   );
 }
 
