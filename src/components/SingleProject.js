@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import ReactCardFlip from "react-card-flip";
+import { getProperLogo } from "./MyLogos";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,7 +61,8 @@ function SingleProject(props) {
           <div className={classes.iconContainer}>
             <CardMedia
               className={classes.media}
-              image={project.imageUrl}
+              image={getProperLogo(project.logoType)}
+              // image={project.imageUrl}
               title={project.title}
             />
           </div>

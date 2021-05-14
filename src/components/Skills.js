@@ -8,39 +8,11 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-
 import backgroundGif from "../assets/videos/background-coding.gif";
+import { MyIcons } from "./MyIcons";
+import Datos from "../data/data.json";
 
-import { MyIcons, ICON_TYPES } from "./MyIcons";
-
-const SKILLS_DATA = [
-  {
-    type: ICON_TYPES.frontEndIcon,
-    title: "Front-End",
-    skills: ["JavaScript", "React", "Material-UI", "HTML5"],
-  },
-  {
-    type: ICON_TYPES.backEndIcon,
-    title: "Back-End",
-    skills: ["NodeJS", "Express", "Java"],
-  },
-  {
-    type: ICON_TYPES.databaseIcon,
-    title: "Database",
-    skills: ["MongoDB", "MySQL", "Firestore"],
-  },
-  {
-    type: ICON_TYPES.otherIcon,
-    title: "Other",
-    skills: ["Firebase", "Ionic", "Angular", "MongoDB Atlas"],
-  },
-  {
-    type: ICON_TYPES.softSkillsIcon,
-    title: "Soft skills",
-    skills: ["Teamwork", "Problem Solving", "Communication", "Adaptability"],
-  },
-];
-
+const SKILLS_DATA = Datos.SKILLS_DATA;
 const FILL = "white";
 const STROKE = "white";
 

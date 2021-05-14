@@ -1,0 +1,53 @@
+{
+  "SKILLS_DATA": [
+    {
+      "type": "frontEndIcon",
+      "title": "Front-End",
+      "skills": ["JavaScript", "React", "Material-UI", "HTML5"]
+    },
+    {
+      "type": "backEndIcon",
+      "title": "Back-End",
+      "skills": ["NodeJS", "Express", "Java"]
+    },
+    {
+      "type": "databaseIcon",
+      "title": "Database",
+      "skills": ["MongoDB", "MySQL", "Firestore"]
+    },
+    {
+      "type": "otherIcon",
+      "title": "Other",
+      "skills": ["Firebase", "Ionic", "Angular", "MongoDB Atlas"]
+    },
+    {
+      "type": "softSkillsIcon",
+      "title": "Soft skills",
+      "skills": ["Teamwork", "Problem Solving", "Communication", "Adaptability"]
+    }
+  ],
+
+  "PROJECTS": [
+    {
+      "projectUrl": "https://github.com/eduardoislas/AlzhaidApp",
+      "logoType": "AlzaidLogo",
+      "title": "Alzaid",
+      "skills": ["TypeScript", "Ionic", "Angular", "NodeJS", "Mongo"],
+      "description": "I developed a Mobile App for an alzheimer elderly care home, where its employees with different roles send notifications to each other, administrate their patients daily activities, humor and incidences.  Its front-end was developed with TypeScript, Angular, Ionic, HTML and CSS. Its back-end was developed using Node JS and its database with Mongo DB."
+    },
+    {
+      "projectUrl": "https://github.com/JonatanCervantes/bsb",
+      "logoType": "BsbLogo",
+      "title": "Barber Brothers",
+      "skills": ["Kotlin", "Android Studio", "Firestore", "Coroutines"],
+      "description": "Developed an android app using Kotlin for a local barber shop. Implemented CRUD operations to manage appointments, employees and services offered. Incorporated Firebase for: authentications, firestore, storage and push notifications.  Use of coroutines and MVVM."
+    },
+    {
+      "projectUrl": "https://github.com/JonatanCervantes/my-portfolio",
+      "logoType": "JcLogo",
+      "title": "My portfolio",
+      "skills": ["JavaScript", "React", "Material-UI", "Firebase"],
+      "description": "Developed a web app using React to showcase who I am, my skills and some of my projects. Achieved responsive design thanks to the implementation of Material-UI."
+    }
+  ]
+}
