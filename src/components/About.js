@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { GridList, GridListTile, Typography } from "@material-ui/core";
+import { GridList, GridListTile, Typography, Zoom } from "@material-ui/core";
 import jsLogo from "../assets/images/js-logo.svg";
 import nodeJsLogo from "../assets/images/nodejs-logo.svg";
 import reactLogo from "../assets/images/react-logo.svg";
+import useOnScreen from "./hooks/useOnScreen";
 
 const LOGOS = [jsLogo, reactLogo, nodeJsLogo];
 
@@ -34,9 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
 function About() {
   const classes = useStyles();
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="about" className={classes.root}>
+    <Grid container id="about" className={classes.root} ref={ref}>
       <Grid className={classes.gridContainer} container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
@@ -50,15 +53,19 @@ function About() {
             has a true impact on society.
           </Typography>{" "}
         </Grid>
-        <Grid item xs={6} sm={4}>
-          <GridList cols={3}>
-            {LOGOS.map((logo, index) => (
-              <GridListTile key={`Logo${index}`} cols={1}>
-                <img className={classes.logoStyle} src={logo} />
-              </GridListTile>
-            ))}
-          </GridList>
-        </Grid>
+
+        <Zoom in={isVisible} timeout={5000}>
+          <Grid item xs={6} sm={4}>
+            <GridList cols={3}>
+              {LOGOS.map((logo, index) => (
+                <GridListTile key={`Logo${index}`} cols={1}>
+                  <img className={classes.logoStyle} src={logo} />
+                </GridListTile>
+              ))}
+            </GridList>
+          </Grid>
+        </Zoom>
+
         <Grid className={classes.claseBackground} item xs={false} sm={2}></Grid>
       </Grid>
     </Grid>

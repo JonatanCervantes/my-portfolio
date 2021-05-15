@@ -1,7 +1,8 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import { Grid, Grow, makeStyles, Typography } from "@material-ui/core";
+import React, { useRef } from "react";
 import SingleProject from "./SingleProject";
 import Data from "../data/data.json";
+import useOnScreen from "./hooks/useOnScreen";
 
 const PROJECTS = Data.PROJECTS;
 
@@ -9,13 +10,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: "100%",
-    height: "105%",
+    height: "100%",
     // marginInline: theme.spacing(1),
   },
   gridContainer: {
     alignSelf: "center",
     alignItems: "center",
-    justify: "center",
+    justifyContent: "center",
   },
 
   titles: {
@@ -26,9 +27,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Projects() {
   const classes = useStyles();
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="projects" className={classes.root}>
+    <Grid container id="projects" className={classes.root} ref={ref}>
       <Grid container className={classes.gridContainer} spacing={3}>
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
@@ -37,11 +40,13 @@ function Projects() {
           </Typography>
         </Grid>
         <Grid item xs={false} sm={2}></Grid>
-        <Grid container justify="space-evenly">
-          {PROJECTS.map((sp, index) => (
-            <SingleProject key={`Project${index}`} project={sp} />
-          ))}
-        </Grid>
+        <Grow in={isVisible} timeout={2000}>
+          <Grid container justify="space-evenly">
+            {PROJECTS.map((sp, index) => (
+              <SingleProject key={`Project${index}`} project={sp} />
+            ))}
+          </Grid>
+        </Grow>
       </Grid>
     </Grid>
   );

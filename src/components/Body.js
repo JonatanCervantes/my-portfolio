@@ -2,6 +2,7 @@ import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import About from "./About";
 import HeroImage from "./HeroImage";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Skills from "./Skills";
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: theme.palette.background.default,
   },
   gridStyle: {
-    minHeight: "600px ",
+    // minHeight: "600px ",
     // border: "1px dashed green",
   },
   sameBackground: {
@@ -26,25 +27,49 @@ const useStyles = makeStyles((theme) => ({
 
 function Body() {
   const classes = useStyles();
+  const { height, width } = useWindowDimensions();
+
+  console.log("height" + height);
+
   return (
     <>
       <Grid className={classes.root} container>
         <Grid container className={classes.sameBackground}>
           <Navbar></Navbar>
-          <Grid alignItems="center" className={classes.gridStyle} container>
+          <Grid
+            alignItems="center"
+            className={classes.gridStyle}
+            container
+            style={{ minHeight: height }}
+          >
             <HeroImage></HeroImage>
           </Grid>
         </Grid>
 
-        <Grid alignItems="center" className={classes.gridStyle} container>
+        <Grid
+          alignItems="center"
+          className={classes.gridStyle}
+          container
+          style={{ minHeight: height }}
+        >
           <About></About>
         </Grid>
 
-        <Grid alignItems="center" className={classes.gridStyle} container>
+        <Grid
+          alignItems="center"
+          className={classes.gridStyle}
+          container
+          style={{ minHeight: height }}
+        >
           <Skills></Skills>
         </Grid>
 
-        <Grid alignItems="center" className={classes.gridStyle} container>
+        <Grid
+          alignItems="center"
+          className={classes.gridStyle}
+          container
+          style={{ minHeight: height }}
+        >
           <Projects></Projects>
         </Grid>
 

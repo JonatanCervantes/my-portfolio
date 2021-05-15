@@ -4,13 +4,15 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Grow,
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import React from "react";
+import React, { useRef } from "react";
 import backgroundGif from "../assets/videos/background-coding.gif";
 import { MyIcons } from "./MyIcons";
 import Datos from "../data/data.json";
+import useOnScreen from "./hooks/useOnScreen";
 
 const SKILLS_DATA = Datos.SKILLS_DATA;
 const FILL = "white";
@@ -19,6 +21,7 @@ const STROKE = "white";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    height: "100%",
   },
   svgIcons: {
     height: 90,
@@ -66,9 +69,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Skills() {
   const classes = useStyles();
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="skills" className={classes.root}>
+    <Grid container id="skills" className={classes.root} ref={ref}>
       <Card className={classes.cardStyle}>
         <CardMedia
           className={classes.backgroundImagen}
@@ -87,37 +92,39 @@ function Skills() {
             </Grid>
             <Grid item xs={false} sm={2}></Grid>
 
-            <Grid container justify="space-evenly">
-              {SKILLS_DATA.map((skill, index) => (
-                <Card className={classes.cardBackground} key={`Logo${index}`}>
-                  <CardActionArea>
-                    <div className={classes.iconContainer}>
-                      <MyIcons
-                        type={skill.type}
-                        fill={FILL}
-                        stroke={STROKE}
-                        style={classes.svgIcons}
-                      ></MyIcons>
-                    </div>
+            <Grow in={isVisible} timeout={5000}>
+              <Grid container justify="space-evenly">
+                {SKILLS_DATA.map((skill, index) => (
+                  <Card className={classes.cardBackground} key={`Logo${index}`}>
+                    <CardActionArea>
+                      <div className={classes.iconContainer}>
+                        <MyIcons
+                          type={skill.type}
+                          fill={FILL}
+                          stroke={STROKE}
+                          style={classes.svgIcons}
+                        ></MyIcons>
+                      </div>
 
-                    <CardContent className={classes.textContainer}>
-                      <Typography gutterBottom variant="h5">
-                        {skill.title}
-                      </Typography>
-                      {skill.skills.map((technology, index) => (
-                        <Typography
-                          key={`Skill${index}`}
-                          variant="body2"
-                          component="p"
-                        >
-                          {technology}
+                      <CardContent className={classes.textContainer}>
+                        <Typography gutterBottom variant="h5">
+                          {skill.title}
                         </Typography>
-                      ))}
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              ))}
-            </Grid>
+                        {skill.skills.map((technology, index) => (
+                          <Typography
+                            key={`Skill${index}`}
+                            variant="body2"
+                            component="p"
+                          >
+                            {technology}
+                          </Typography>
+                        ))}
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                ))}
+              </Grid>
+            </Grow>
           </Grid>
         </Grid>
       </Card>
