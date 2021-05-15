@@ -44,8 +44,6 @@ function Body() {
   const classes = useStyles();
   const { height } = useWindowDimensions();
 
-  console.log("height" + height);
-
   return (
     <>
       <Grid className={classes.root} container>
