@@ -3,14 +3,27 @@ import React from "react";
 import About from "./About";
 import HeroImage from "./HeroImage";
 import useWindowDimensions from "./hooks/useWindowDimensions";
-// import ModalPlayer from "./ModalPlayer";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Skills from "./Skills";
-// import SimpleModal from "./Test";
-// import Test from "./Test";
 
 const useStyles = makeStyles((theme) => ({
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "1em",
+    },
+    "*::-webkit-scrollbar-track": {
+      background: "#ffffff",
+      borderRadius: "10px",
+      boxShadow: "inset 7px 10px 12px #ffffff",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      background: "linear-gradient(13deg, #08c7d6 14%,#32497a 64%)",
+    },
+    "*::-webkit-scrollbar-thumb:hover": {
+      background: "linear-gradient(13deg, #0c8d99 14%,#0c0c36 64%)",
+    },
+  },
   root: {
     flexGrow: 1,
     background:
@@ -29,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Body() {
   const classes = useStyles();
-  const { height, width } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
   console.log("height" + height);
 
@@ -74,10 +87,6 @@ function Body() {
         >
           <Projects></Projects>
         </Grid>
-
-        {/* <Grid alignItems="center" className={classes.gridStyle} container>
-          <ModalPlayer></ModalPlayer>
-        </Grid> */}
       </Grid>
     </>
   );

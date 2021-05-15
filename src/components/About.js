@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     justify: "center",
   },
   titles: {
-    // paddingBottom: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
     textAlign: "center",
   },
   phrases: {
@@ -40,7 +40,11 @@ function About() {
 
   return (
     <Grid container id="about" className={classes.root} ref={ref}>
-      <Grid className={classes.gridContainer} container spacing={3}>
+      <Grid
+        className={classes.gridContainer}
+        container
+        // spacing={3}
+      >
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
             WEB & MOBILE FOCUSED <br></br>EAGER TO CONTRIBUTE & WILLING TO LEARN

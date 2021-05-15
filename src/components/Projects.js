@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   titles: {
-    paddingBottom: theme.spacing(3),
+    paddingBottom: theme.spacing(4),
     textAlign: "center",
   },
 }));
@@ -32,7 +32,11 @@ function Projects() {
 
   return (
     <Grid container id="projects" className={classes.root} ref={ref}>
-      <Grid container className={classes.gridContainer} spacing={3}>
+      <Grid
+        container
+        className={classes.gridContainer}
+        // spacing={3}
+      >
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
           <Typography className={classes.titles} variant="h3">
