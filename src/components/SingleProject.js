@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Button,
   Card,
@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import ReactCardFlip from "react-card-flip";
 import { getProperLogo } from "./MyLogos";
+import ModalPlayer from "./ModalPlayer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +46,7 @@ function SingleProject(props) {
   const buttonTexts = ["Description", "Technologies"];
   const [isFlipped, setIsFlipped] = useState(false);
   const [buttonText, setButtonText] = useState(buttonTexts[0]);
+  const modalPlayerRef = useRef();
   const project = props.project;
   const classes = useStyles();
 
@@ -52,6 +54,11 @@ function SingleProject(props) {
     if (isFlipped) setButtonText(buttonTexts[0]);
     else setButtonText(buttonTexts[1]);
     setIsFlipped((prev) => !prev);
+  };
+
+  const onClickDemo = (videoUrl) => {
+    console.log("holiwi");
+    <ModalPlayer videoUrl={videoUrl}></ModalPlayer>;
   };
 
   return (
@@ -62,7 +69,6 @@ function SingleProject(props) {
             <CardMedia
               className={classes.media}
               image={getProperLogo(project.logoType)}
-              // image={project.imageUrl}
               title={project.title}
             />
           </div>
@@ -71,10 +77,7 @@ function SingleProject(props) {
               {project.title}
             </Typography>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <div
-                // onMouseEnter={() => setIsFlipped((prev) => !prev)}
-                className="CardFront"
-              >
+              <div className="CardFront">
                 {project.skills.map((technology, index) => (
                   <Typography
                     key={`Technology${index}`}
@@ -85,10 +88,7 @@ function SingleProject(props) {
                   </Typography>
                 ))}
               </div>
-              <div
-                // onMouseLeave={() => setIsFlipped((prev) => !prev)}
-                className={"CardBack"}
-              >
+              <div className={"CardBack"}>
                 <Typography variant="body2" component="p">
                   {project.description}
                 </Typography>
@@ -98,15 +98,16 @@ function SingleProject(props) {
         </CardActionArea>
         <div className={classes.cardFooter}>
           <CardActions>
+            <Button onClick={() => flipCard()} size="small" color="primary">
+              {buttonText}
+            </Button>
             <Button
-              // onClick={() => setIsFlipped((prev) => !prev)}
-              onClick={() => flipCard()}
+              onClick={() => {
+                modalPlayerRef.current.onOpenModal();
+              }}
               size="small"
               color="primary"
             >
-              {buttonText}
-            </Button>
-            <Button size="small" color="primary">
               Demo
             </Button>
             <Link
@@ -123,6 +124,10 @@ function SingleProject(props) {
           </CardActions>
         </div>
       </div>
+      <ModalPlayer
+        videoUrl={project.demoUrl}
+        ref={modalPlayerRef}
+      ></ModalPlayer>
     </Card>
   );
 }

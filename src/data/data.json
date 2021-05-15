@@ -30,6 +30,7 @@
   "PROJECTS": [
     {
       "projectUrl": "https://github.com/eduardoislas/AlzhaidApp",
+      "demoUrl": "https://www.youtube.com/watch?v=nC6ne5MQ_yA",
       "logoType": "AlzaidLogo",
       "title": "Alzaid",
       "skills": ["TypeScript", "Ionic", "Angular", "NodeJS", "Mongo"],
@@ -37,6 +38,7 @@
     },
     {
       "projectUrl": "https://github.com/JonatanCervantes/bsb",
+      "demoUrl": "https://www.youtube.com/watch?v=w2y715XAmso",
       "logoType": "BsbLogo",
       "title": "Barber Brothers",
       "skills": ["Kotlin", "Android Studio", "Firestore", "Coroutines"],
@@ -44,6 +46,7 @@
     },
     {
       "projectUrl": "https://github.com/JonatanCervantes/my-portfolio",
+      "demoUrl": "https://www.youtube.com/watch?v=P-uhgIzHYYo",
       "logoType": "JcLogo",
       "title": "My portfolio",
       "skills": ["JavaScript", "React", "Material-UI", "Firebase"],

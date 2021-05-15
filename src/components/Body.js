@@ -3,10 +3,12 @@ import React from "react";
 import About from "./About";
 import HeroImage from "./HeroImage";
 import useWindowDimensions from "./hooks/useWindowDimensions";
+// import ModalPlayer from "./ModalPlayer";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
 import Skills from "./Skills";
-import Test from "./Test";
+// import SimpleModal from "./Test";
+// import Test from "./Test";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,7 +76,7 @@ function Body() {
         </Grid>
 
         {/* <Grid alignItems="center" className={classes.gridStyle} container>
-          <Test></Test>
+          <ModalPlayer></ModalPlayer>
         </Grid> */}
       </Grid>
     </>
