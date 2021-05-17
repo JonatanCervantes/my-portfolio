@@ -73,7 +73,7 @@ function Skills() {
   const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="skills" className={classes.root} ref={ref}>
+    <Grid container id="skills" className={classes.root}>
       <Card className={classes.cardStyle}>
         <CardMedia
           className={classes.backgroundImagen}
@@ -93,7 +93,7 @@ function Skills() {
             <Grid item xs={false} sm={2}></Grid>
 
             <Grow in={isVisible} timeout={5000}>
-              <Grid container justify="space-evenly">
+              <Grid ref={ref} container justify="space-evenly">
                 {SKILLS_DATA.map((skill, index) => (
                   <Card className={classes.cardBackground} key={`Logo${index}`}>
                     <CardActionArea>

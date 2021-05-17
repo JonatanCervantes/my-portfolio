@@ -31,7 +31,7 @@ function Projects() {
   const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="projects" className={classes.root} ref={ref}>
+    <Grid container id="projects" className={classes.root}>
       <Grid container className={classes.gridContainer}>
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={12} sm={8}>
@@ -41,7 +41,7 @@ function Projects() {
         </Grid>
         <Grid item xs={false} sm={2}></Grid>
         <Grow in={isVisible} timeout={2000}>
-          <Grid container justify="space-evenly">
+          <Grid ref={ref} container justify="space-evenly">
             {PROJECTS.map((sp, index) => (
               <SingleProject key={`Project${index}`} project={sp} />
             ))}

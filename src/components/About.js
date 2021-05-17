@@ -39,7 +39,7 @@ function About() {
   const isVisible = useOnScreen(ref);
 
   return (
-    <Grid container id="about" className={classes.root} ref={ref}>
+    <Grid container id="about" className={classes.root}>
       <Grid className={classes.gridContainer} container>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
@@ -55,7 +55,7 @@ function About() {
         </Grid>
 
         <Zoom in={isVisible} timeout={5000}>
-          <Grid item xs={6} sm={4}>
+          <Grid ref={ref} item xs={6} sm={4}>
             <GridList cols={3}>
               {LOGOS.map((logo, index) => (
                 <GridListTile key={`Logo${index}`} cols={1}>
