@@ -40,11 +40,7 @@ function About() {
 
   return (
     <Grid container id="about" className={classes.root} ref={ref}>
-      <Grid
-        className={classes.gridContainer}
-        container
-        // spacing={3}
-      >
+      <Grid className={classes.gridContainer} container>
         <Grid item xs={12}>
           <Typography className={classes.titles} variant="h3">
             WEB & MOBILE FOCUSED <br></br>EAGER TO CONTRIBUTE & WILLING TO LEARN
@@ -63,7 +59,11 @@ function About() {
             <GridList cols={3}>
               {LOGOS.map((logo, index) => (
                 <GridListTile key={`Logo${index}`} cols={1}>
-                  <img className={classes.logoStyle} src={logo} />
+                  <img
+                    className={classes.logoStyle}
+                    src={logo}
+                    alt={`Logo ${classes.logo}`}
+                  />
                 </GridListTile>
               ))}
             </GridList>

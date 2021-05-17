@@ -10,6 +10,8 @@ function getProperLogo(type) {
       return BsbLogo;
     case "JcLogo":
       return JcLogo;
+    default:
+      return JcLogo;
   }
 }
 

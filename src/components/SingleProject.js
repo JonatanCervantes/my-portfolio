@@ -56,11 +56,6 @@ function SingleProject(props) {
     setIsFlipped((prev) => !prev);
   };
 
-  const onClickDemo = (videoUrl) => {
-    console.log("holiwi");
-    <ModalPlayer videoUrl={videoUrl}></ModalPlayer>;
-  };
-
   return (
     <Card className={classes.root}>
       <div className={classes.flexContainer}>

@@ -51,6 +51,14 @@ function getProperIcon(type, fill, stroke, style) {
           className={style}
         ></SoftSkillsIcon>
       );
+    default:
+      return (
+        <FrontEndIcon
+          fill={fill}
+          stroke={stroke}
+          className={style}
+        ></FrontEndIcon>
+      );
   }
 }
 
