@@ -29,6 +29,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  pepito: {
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+    fontStyle: "italic",
+  },
 }));
 
 function HeroImage() {
@@ -47,7 +52,7 @@ function HeroImage() {
           <Typography className={styles.typography} variant="h2">
             JONATAN CERVANTES{" "}
           </Typography>
-          <Typography className={styles.typography} variant="h3">
+          <Typography className={styles.pepito} variant="h4">
             SOFTWARE ENGINEER{" "}
           </Typography>
         </div>

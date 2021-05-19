@@ -1,4 +1,7 @@
 {
+  "LINKEDIN_URL": "https://www.linkedin.com/in/jonatan-cervantes/",
+  "GITHUB_URL": "https://github.com/JonatanCervantes",
+  "RESUME_URL": "https://drive.google.com/drive/folders/1Xh5kNFe0DEbfkehZ2hvi4IXFQBhm3Uu_?usp=sharing",
   "SKILLS_DATA": [
     {
       "type": "frontEndIcon",
@@ -30,15 +33,15 @@
   "PROJECTS": [
     {
       "projectUrl": "https://github.com/eduardoislas/AlzhaidApp",
-      "demoUrl": "https://www.youtube.com/watch?v=nC6ne5MQ_yA",
+      "demoUrl": "https://www.youtube.com/watch?v=HdwkUgMk4gc",
       "logoType": "AlzaidLogo",
       "title": "Alzaid",
       "skills": ["TypeScript", "Ionic", "Angular", "NodeJS", "Mongo"],
-      "description": "I developed a Mobile App for an alzheimer elderly care home, where its employees with different roles send notifications to each other, administrate their patients daily activities, humor and incidences.  Its front-end was developed with TypeScript, Angular, Ionic, HTML and CSS. Its back-end was developed using Node JS and its database with Mongo DB."
+      "description": "Contributed in the development of a Mobile App for an alzheimer elderly care home. Implemented CRUD operations to manage patients daily records, activities and incidences. Front-end was built using TypeScript, Angular, Ionic, HTML and CSS. Back-end was developed using NodeJS, Express and MongoDB"
     },
     {
       "projectUrl": "https://github.com/JonatanCervantes/bsb",
-      "demoUrl": "https://www.youtube.com/watch?v=w2y715XAmso",
+      "demoUrl": "https://www.youtube.com/watch?v=PJMXJRrairc",
       "logoType": "BsbLogo",
       "title": "Barber Brothers",
       "skills": ["Kotlin", "Android Studio", "Firestore", "Coroutines"],
@@ -46,11 +49,11 @@
     },
     {
       "projectUrl": "https://github.com/JonatanCervantes/my-portfolio",
-      "demoUrl": "https://www.youtube.com/watch?v=P-uhgIzHYYo",
+      "demoUrl": "",
       "logoType": "JcLogo",
       "title": "My portfolio",
       "skills": ["JavaScript", "React", "Material-UI", "Firebase"],
-      "description": "Developed a web app using React to showcase who I am, my skills and some of my projects. Achieved responsive design thanks to the implementation of Material-UI."
+      "description": "Developed a web app using React to showcase who I am, my skills and some of my projects. Achieved responsive design thanks to the implementation of Material-UI and Media Query."
     }
   ]
 }

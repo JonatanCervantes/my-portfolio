@@ -96,31 +96,31 @@ function Skills() {
               <Grid ref={ref} container justify="space-evenly">
                 {SKILLS_DATA.map((skill, index) => (
                   <Card className={classes.cardBackground} key={`Logo${index}`}>
-                    <CardActionArea>
-                      <div className={classes.iconContainer}>
-                        <MyIcons
-                          type={skill.type}
-                          fill={FILL}
-                          stroke={STROKE}
-                          style={classes.svgIcons}
-                        ></MyIcons>
-                      </div>
+                    {/* <CardActionArea> */}
+                    <div className={classes.iconContainer}>
+                      <MyIcons
+                        type={skill.type}
+                        fill={FILL}
+                        stroke={STROKE}
+                        style={classes.svgIcons}
+                      ></MyIcons>
+                    </div>
 
-                      <CardContent className={classes.textContainer}>
-                        <Typography gutterBottom variant="h5">
-                          {skill.title}
+                    <CardContent className={classes.textContainer}>
+                      <Typography gutterBottom variant="h5">
+                        {skill.title}
+                      </Typography>
+                      {skill.skills.map((technology, index) => (
+                        <Typography
+                          key={`Skill${index}`}
+                          variant="body2"
+                          component="p"
+                        >
+                          {technology}
                         </Typography>
-                        {skill.skills.map((technology, index) => (
-                          <Typography
-                            key={`Skill${index}`}
-                            variant="body2"
-                            component="p"
-                          >
-                            {technology}
-                          </Typography>
-                        ))}
-                      </CardContent>
-                    </CardActionArea>
+                      ))}
+                    </CardContent>
+                    {/* </CardActionArea> */}
                   </Card>
                 ))}
               </Grid>

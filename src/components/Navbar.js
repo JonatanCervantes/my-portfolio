@@ -10,11 +10,14 @@ import {
 } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import DescriptionIcon from "@material-ui/icons/Description";
 import jcLogo from "../assets/images/jc-logo.png";
 import { Link as ReactScrollLink } from "react-scroll";
+import Data from "../data/data.json";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/jonatan-cervantes/";
-const GITHUB_URL = "https://github.com/JonatanCervantes";
+const LINKEDIN_URL = Data.LINKEDIN_URL;
+const GITHUB_URL = Data.GITHUB_URL;
+const RESUME_URL = Data.RESUME_URL;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -85,6 +88,7 @@ function Navbar() {
             color="inherit"
             target="_blank"
             rel="noreferrer"
+            title="LinkedIn"
           >
             <IconButton className={classes.menuButton} color="inherit">
               <LinkedInIcon />
@@ -96,9 +100,22 @@ function Navbar() {
             color="inherit"
             target="_blank"
             rel="noreferrer"
+            title="Github"
           >
             <IconButton className={classes.menuButton} color="inherit">
               <GitHubIcon />
+            </IconButton>
+          </Link>
+
+          <Link
+            href={RESUME_URL}
+            color="inherit"
+            target="_blank"
+            rel="noreferrer"
+            title="My Resume"
+          >
+            <IconButton className={classes.menuButton} color="inherit">
+              <DescriptionIcon />
             </IconButton>
           </Link>
         </Toolbar>

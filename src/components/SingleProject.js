@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    padding: theme.spacing(2),
   },
   cardFooter: {
     marginTop: "auto",
@@ -59,38 +60,38 @@ function SingleProject(props) {
   return (
     <Card className={classes.root}>
       <div className={classes.flexContainer}>
-        <CardActionArea>
-          <div className={classes.iconContainer}>
-            <CardMedia
-              className={classes.media}
-              image={getProperLogo(project.logoType)}
-              title={project.title}
-            />
-          </div>
-          <CardContent className={classes.textContainer}>
-            <Typography gutterBottom variant="h5">
-              {project.title}
-            </Typography>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <div className="CardFront">
-                {project.skills.map((technology, index) => (
-                  <Typography
-                    key={`Technology${index}`}
-                    variant="body2"
-                    component="p"
-                  >
-                    {technology}
-                  </Typography>
-                ))}
-              </div>
-              <div className={"CardBack"}>
-                <Typography variant="body2" component="p">
-                  {project.description}
+        {/* <CardActionArea> */}
+        <div className={classes.iconContainer}>
+          <CardMedia
+            className={classes.media}
+            image={getProperLogo(project.logoType)}
+            title={project.title}
+          />
+        </div>
+        <CardContent className={classes.textContainer}>
+          <Typography gutterBottom variant="h5">
+            {project.title}
+          </Typography>
+          <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+            <div className="CardFront">
+              {project.skills.map((technology, index) => (
+                <Typography
+                  key={`Technology${index}`}
+                  variant="body2"
+                  component="p"
+                >
+                  {technology}
                 </Typography>
-              </div>
-            </ReactCardFlip>
-          </CardContent>
-        </CardActionArea>
+              ))}
+            </div>
+            <div className={"CardBack"}>
+              <Typography variant="body2" component="p" align="justify">
+                {project.description}
+              </Typography>
+            </div>
+          </ReactCardFlip>
+        </CardContent>
+        {/* </CardActionArea> */}
         <div className={classes.cardFooter}>
           <CardActions>
             <Button onClick={() => flipCard()} size="small" color="primary">
