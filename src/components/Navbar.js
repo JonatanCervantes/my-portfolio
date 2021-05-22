@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   AppBar,
   Toolbar,
   IconButton,
@@ -14,6 +13,7 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import jcLogo from "../assets/images/jc-logo.png";
 import { Link as ReactScrollLink } from "react-scroll";
 import Data from "../data/data.json";
+import AppBarOptions from "./AppBarOptions";
 
 const LINKEDIN_URL = Data.LINKEDIN_URL;
 const GITHUB_URL = Data.GITHUB_URL;
@@ -29,17 +29,10 @@ const useStyles = makeStyles((theme) => ({
   logoStyle: {
     flexGrow: 1,
   },
-  title: {
-    flexGrow: 1,
-  },
   appBarStyle: {
-    // background: "transparent",
     background:
       "radial-gradient(circle, rgba(23,24,24,1) 50%, rgba(28,33,36,1) 90%)",
     boxShadow: "none",
-  },
-  active: {
-    borderBottom: "2px solid #08C7D6",
   },
 }));
 
@@ -58,31 +51,10 @@ function Navbar() {
             </ReactScrollLink>
           </div>
 
-          <ReactScrollLink
-            activeClass={classes.active}
-            to="about"
-            spy={true}
-            smooth={true}
-          >
-            <Button color="inherit"> About </Button>
-          </ReactScrollLink>
+          <div>
+            <AppBarOptions></AppBarOptions>
+          </div>
 
-          <ReactScrollLink
-            activeClass={classes.active}
-            to="skills"
-            spy={true}
-            smooth={true}
-          >
-            <Button color="inherit">Skills</Button>
-          </ReactScrollLink>
-          <ReactScrollLink
-            activeClass={classes.active}
-            to="projects"
-            spy={true}
-            smooth={true}
-          >
-            <Button color="inherit">Projects </Button>
-          </ReactScrollLink>
           <Link
             href={LINKEDIN_URL}
             color="inherit"

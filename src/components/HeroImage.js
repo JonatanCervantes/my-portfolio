@@ -5,16 +5,17 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
 import backgroundGif from "../assets/videos/background-coding-2.gif";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    width: "100%",
-    height: "100%",
+    // flexGrow: 1,
   },
   card: {
     position: "relative",
     background: "transparent",
+    width: "100%",
+    height: "100%",
   },
   media: {
     opacity: "0.1",
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
-  pepito: {
+  subHeader: {
     textAlign: "center",
     color: theme.palette.text.secondary,
     fontStyle: "italic",
@@ -40,24 +41,24 @@ function HeroImage() {
   const styles = useStyles();
 
   return (
-    <div id="heroImage" className={styles.root}>
+    <Grid container id="heroImage" className={styles.root}>
       <Card className={styles.card}>
         <CardMedia
           className={styles.media}
           component="img"
-          height="600px"
+          height="100%"
           src={backgroundGif}
         />
         <div className={styles.overlay}>
           <Typography className={styles.typography} variant="h2">
             JONATAN CERVANTES{" "}
           </Typography>
-          <Typography className={styles.pepito} variant="h4">
+          <Typography className={styles.subHeader} variant="h4">
             SOFTWARE ENGINEER{" "}
           </Typography>
         </div>
       </Card>
-    </div>
+    </Grid>
   );
 }
 

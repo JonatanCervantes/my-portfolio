@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: "100%",
     height: "100%",
+    padding: theme.spacing(1),
   },
   gridContainer: {
     alignSelf: "center",
@@ -41,11 +42,15 @@ function About() {
   return (
     <Grid container id="about" className={classes.root}>
       <Grid className={classes.gridContainer} container>
-        <Grid item xs={12}>
+        <Grid item xs={false} sm={2}></Grid>
+        <Grid item xs={12} sm={8}>
           <Typography className={classes.titles} variant="h3">
-            WEB & MOBILE FOCUSED <br></br>EAGER TO CONTRIBUTE & WILLING TO LEARN
+            WEB & MOBILE FOCUSED. <br></br>EAGER TO CONTRIBUTE & WILLING TO
+            LEARN
           </Typography>
         </Grid>
+        <Grid item xs={false} sm={2}></Grid>
+
         <Grid item xs={false} sm={2}></Grid>
         <Grid item xs={6} sm={4}>
           <Typography className={classes.phrases}>

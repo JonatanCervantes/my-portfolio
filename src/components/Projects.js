@@ -9,9 +9,7 @@ const PROJECTS = Data.PROJECTS;
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width: "100%",
-    height: "100%",
-    // marginInline: theme.spacing(1),
+    padding: theme.spacing(1),
   },
   gridContainer: {
     alignSelf: "center",
@@ -20,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   titles: {
-    paddingBottom: theme.spacing(4),
+    // paddingBottom: theme.spacing(4),
+    paddingBlock: theme.spacing(3),
+
     textAlign: "center",
   },
 }));

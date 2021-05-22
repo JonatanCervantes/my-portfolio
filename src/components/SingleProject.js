@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
@@ -16,13 +15,13 @@ import ModalPlayer from "./ModalPlayer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
     marginTop: theme.spacing(1),
-    // marginInline: theme.spacing(1),
   },
   media: {
     height: 90,
     width: 90,
+    // height: "8vw",
+    // width: "8vw",
   },
   iconContainer: {
     display: "flex",
@@ -47,6 +46,7 @@ function SingleProject(props) {
   const buttonTexts = ["Description", "Technologies"];
   const [isFlipped, setIsFlipped] = useState(false);
   const [buttonText, setButtonText] = useState(buttonTexts[0]);
+  const [demoButtonDisabled, setDemoButtonDisabled] = useState(false);
   const modalPlayerRef = useRef();
   const project = props.project;
   const classes = useStyles();
@@ -57,10 +57,17 @@ function SingleProject(props) {
     setIsFlipped((prev) => !prev);
   };
 
+  const checkDemoButton = () => {
+    if (project.demoUrl === "") setDemoButtonDisabled(true);
+  };
+
+  useEffect(() => {
+    checkDemoButton();
+  }, []);
+
   return (
     <Card className={classes.root}>
       <div className={classes.flexContainer}>
-        {/* <CardActionArea> */}
         <div className={classes.iconContainer}>
           <CardMedia
             className={classes.media}
@@ -91,13 +98,14 @@ function SingleProject(props) {
             </div>
           </ReactCardFlip>
         </CardContent>
-        {/* </CardActionArea> */}
         <div className={classes.cardFooter}>
           <CardActions>
             <Button onClick={() => flipCard()} size="small" color="primary">
               {buttonText}
             </Button>
+
             <Button
+              disabled={demoButtonDisabled}
               onClick={() => {
                 modalPlayerRef.current.onOpenModal();
               }}

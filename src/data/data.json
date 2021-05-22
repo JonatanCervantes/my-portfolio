@@ -15,7 +15,7 @@
     },
     {
       "type": "databaseIcon",
-      "title": "Database",
+      "title": "Databases",
       "skills": ["MongoDB", "MySQL", "Firestore"]
     },
     {

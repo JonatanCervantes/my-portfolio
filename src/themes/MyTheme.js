@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { blueGrey } from "@material-ui/core/colors";
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       //   main: "#263238",
@@ -20,11 +20,17 @@ const theme = createMuiTheme({
   },
 
   typography: {
+    fontSize: 15,
     fontWeightLight: 500,
     fontWeightRegular: 600,
     // fontWeightMedium: 700,
     // fontWeightBold: 900,
   },
 });
+
+const themeOptions = {
+  breakpoints: ["xs", "sm", "md", "lg", "xl"],
+};
+theme = responsiveFontSizes(theme, themeOptions);
 
 export default theme;
